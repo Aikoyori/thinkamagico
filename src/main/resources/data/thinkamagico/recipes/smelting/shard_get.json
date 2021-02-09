@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "thinkamagico:sandblue_sand"
+  },
+  "result": "thinkamagico:sandblue",
+  "experience": 0,
+  "cookingtime": 80
+}

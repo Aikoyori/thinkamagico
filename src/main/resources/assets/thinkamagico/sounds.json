@@ -1,0 +1,7 @@
+{
+  "static": {
+    "category": "ambient",
+    "subtitle": "thinkamagico.subtitle.static",
+    "sounds": [ "thinkamagico:static" ]
+  }
+}

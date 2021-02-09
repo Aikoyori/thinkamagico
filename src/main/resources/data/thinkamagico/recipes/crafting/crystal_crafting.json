@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "thinkamagico:sandblue"
+        }
+    },
+    "result": {
+        "item": "thinkamagico:sandblue_crystal_block",
+        "count": 1
+    }
+}

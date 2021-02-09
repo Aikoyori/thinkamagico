@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "thinkamagico:sandblue_crystal_block"
+        }
+    ],
+    "result": {
+        "item": "thinkamagico:sandblue",
+        "count": 9
+    }
+}

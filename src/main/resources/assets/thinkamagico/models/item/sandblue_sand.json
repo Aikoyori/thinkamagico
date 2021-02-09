@@ -1,0 +1,6 @@
+{
+  "parent": "thinkamagico:block/sandblue_overlay",
+  "textures": {
+    "sourceblock": "minecraft:block/sand"
+  }
+}

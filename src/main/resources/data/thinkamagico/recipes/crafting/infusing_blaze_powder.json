@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "thinkamagico:sandblue"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        }
+    ],
+    "result": {
+        "item": "thinkamagico:blazified_sandblue",
+        "count": 1
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "item.thinkamagico.sandblue" : "Sandblue",
+  "item.thinkamagico.blazified_sandblue" : "Blazified Sandblue",
+
+  "block.thinkamagico.sandblue_sand" : "Sandblue Sand",
+  "block.thinkamagico.sandblue_crystal_block" : "Sandblue Crystal Block",
+
+  "enchantment.thinkamagico.waterbounded" : "Waterbounded",
+  "enchantment.thinkamagico.shieldlike" : "Shieldlike",
+  "enchantment.thinkamagico.jabbing" : "Jabbing",
+
+  "itemGroup.thinkamagico" : "Thinkamagico",
+
+  "effect.thinkamagico.dizzy" : "Dizzy",
+  "effect.thinkamagico.hallucination" : "Hallucination",
+
+
+  "item.minecraft.potion.effect.dizzy": "Potion of Dizziness",
+  "item.minecraft.potion.effect.long_dizzy": "Potion of Dizziness",
+  "item.minecraft.potion.effect.strong_dizzy": "Potion of Dizziness",
+  "item.minecraft.splash_potion.effect.dizzy": "Splash Potion of Dizziness",
+  "item.minecraft.splash_potion.effect.long_dizzy": "Splash Potion of Dizziness",
+  "item.minecraft.splash_potion.effect.strong_dizzy": "Splash Potion of Dizziness",
+  "item.minecraft.lingering_potion.effect.dizzy": "Lingering Potion of Dizziness",
+  "item.minecraft.lingering_potion.effect.long_dizzy": "Lingering Potion of Dizziness",
+  "item.minecraft.lingering_potion.effect.strong_dizzy": "Lingering Potion of Dizziness",
+  "item.minecraft.tipped_arrow.effect.dizzy": "Arrow of Dizziness",
+  "item.minecraft.tipped_arrow.effect.long_dizzy": "Arrow of Dizziness",
+  "item.minecraft.tipped_arrow.effect.strong_dizzy": "Arrow of Dizziness"
+}
