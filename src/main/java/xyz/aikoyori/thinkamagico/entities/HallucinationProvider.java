@@ -271,6 +271,6 @@ public class HallucinationProvider extends Entity {
 
     @Override
     public IPacket<?> createSpawnPacket() {
-        return  NetworkHooks.getEntitySpawningPacket(this);
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 }

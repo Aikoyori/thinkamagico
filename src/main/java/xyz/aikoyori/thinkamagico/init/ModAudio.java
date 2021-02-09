@@ -16,4 +16,5 @@ public class ModAudio{
 
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MainClass.MODID);
     public static RegistryObject<SoundEvent> STATIC = SOUNDS.register("static",()->new SoundEvent(new ResourceLocation(MainClass.MODID,"static")));
+    public static RegistryObject<SoundEvent> POOF = SOUNDS.register("poof",()->new SoundEvent(new ResourceLocation(MainClass.MODID,"poof")));
 }

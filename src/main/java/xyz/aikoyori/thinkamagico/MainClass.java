@@ -1,5 +1,6 @@
 package xyz.aikoyori.thinkamagico;
 
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -27,11 +28,13 @@ public class MainClass
 		ModEnchantments.ENCHANTMENTS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModAudio.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModParticles.PARTICLES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		//ModEntities.registerEntitySpawnEggs();
 
 		BrewingRecipeRegistry.addRecipe(new DizzyBrewer());
 		BrewingRecipeRegistry.addRecipe(new StrongDizzyBrewer());
 		BrewingRecipeRegistry.addRecipe(new LongDizzyBrewer());
+
 		//LOGGER.debug("konnichiwa, sekai sama~");
 	}
 

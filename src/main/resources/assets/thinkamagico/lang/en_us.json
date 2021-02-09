@@ -2,6 +2,8 @@
   "item.thinkamagico.sandblue" : "Sandblue",
   "item.thinkamagico.blazified_sandblue" : "Blazified Sandblue",
 
+  "item.thinkamagico.magic_cane" : "Magic Cane",
+
   "block.thinkamagico.sandblue_sand" : "Sandblue Sand",
   "block.thinkamagico.sandblue_crystal_block" : "Sandblue Crystal Block",
 
@@ -13,7 +15,10 @@
 
   "effect.thinkamagico.dizzy" : "Dizzy",
   "effect.thinkamagico.hallucination" : "Hallucination",
+  "effect.thinkamagico.identity_crisis" : "Identity Crisis",
 
+  "thinkamagico.subtitle.poof": "Magical Poofs",
+  "thinkamagico.subtitle.static": "Static",
 
   "item.minecraft.potion.effect.dizzy": "Potion of Dizziness",
   "item.minecraft.potion.effect.long_dizzy": "Potion of Dizziness",

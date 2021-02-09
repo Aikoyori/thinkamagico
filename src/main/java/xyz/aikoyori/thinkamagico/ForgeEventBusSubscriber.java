@@ -6,25 +6,39 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.entity.CreeperRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraft.client.renderer.entity.model.CreeperModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.client.renderer.model.RenderMaterial;
 import net.minecraft.client.renderer.vertex.VertexBuffer;
 import net.minecraft.client.renderer.vertex.VertexFormat;
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
+import net.minecraft.entity.monster.CreeperEntity;
+import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import xyz.aikoyori.thinkamagico.goals.RunAroundGoal;
 import xyz.aikoyori.thinkamagico.init.ModMobEffects;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Mod.EventBusSubscriber(modid=MainClass.MODID,bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEventBusSubscriber {
@@ -137,6 +151,39 @@ public class ForgeEventBusSubscriber {
 
         }*/
     }
+    }
+    @SubscribeEvent
+    public static void onRenderEntity(final RenderLivingEvent.Pre evt) throws IllegalAccessException,NullPointerException{
+        LivingEntity entity = evt.getEntity();
+        if (entity.isPotionActive(ModMobEffects.IDENTITYCRISIS.get()))
+        {
+            evt.setCanceled(true);
+
+            LivingRenderer renderer = evt.getRenderer();
+            MatrixStack stack = evt.getMatrixStack();
+            stack.push();
+            EntityRendererManager rendererManager = renderer.getRenderManager();
+            List<EntityType> registeredEntities = new ArrayList<EntityType>();
+
+            Registry.ENTITY_TYPE.stream().filter(EntityType::isSummonable).iterator().forEachRemaining(registeredEntities::add);
+                EntityType entityType = registeredEntities.get(evt.getEntity().world.getRandom().nextInt(registeredEntities.size()));
+                Entity ent = entityType.create(evt.getEntity().world);
+                while(!(ent instanceof SheepEntity))
+                {
+                    entityType = registeredEntities.get(evt.getEntity().world.getRandom().nextInt(registeredEntities.size()));
+                    ent = entityType.create(evt.getEntity().world);
+                }
+                LivingEntity sheep = (LivingEntity)ent;
+                LivingRenderer cloner = (LivingRenderer) new SheepRenderer(rendererManager);
+                sheep.limbSwing = entity.limbSwing;
+                sheep.limbSwingAmount = entity.limbSwingAmount;
+                sheep.rotationYaw = entity.rotationYaw;
+                sheep.renderYawOffset = entity.renderYawOffset;
+                cloner.render(sheep,entity.rotationYaw,evt.getPartialRenderTick(),stack,evt.getBuffers(),evt.getLight());
+
+                stack.pop();
+
+        }
     }
 
 }

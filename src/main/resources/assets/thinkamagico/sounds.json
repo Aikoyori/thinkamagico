@@ -3,5 +3,10 @@
     "category": "ambient",
     "subtitle": "thinkamagico.subtitle.static",
     "sounds": [ "thinkamagico:static" ]
+  },
+  "poof": {
+    "category": "player",
+    "subtitle": "thinkamagico.subtitle.poof",
+    "sounds": [ "thinkamagico:poof" ]
   }
 }

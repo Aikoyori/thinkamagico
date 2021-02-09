@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
+import xyz.aikoyori.thinkamagico.client.renderer.MagicProjectileRenderer;
 import xyz.aikoyori.thinkamagico.client.renderer.SwordBlockRenderer;
 import xyz.aikoyori.thinkamagico.client.renderer.HallucinationProviderRenderer;
 import xyz.aikoyori.thinkamagico.helper.InitiateBlockHandler;
@@ -74,6 +75,7 @@ public class ModEventBusSubscriber {
     {
         MinecraftForge.EVENT_BUS.register(new SwordBlockRenderer());
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.HALLUCINNATION_PROVIDER.get(), HallucinationProviderRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.MAGIC_PROJECTILE.get(), MagicProjectileRenderer::new);
         //RenderingRegistry.registerEntityRenderingHandler(ModEntities.HALLUCINATION_FAKE_MOBS.get(), FakeMobsRenderer::new);
         RenderTypeLookup.setRenderLayer(ModBlocks.SANDBLUE_SAND.get(), RenderType.getCutout());
 
