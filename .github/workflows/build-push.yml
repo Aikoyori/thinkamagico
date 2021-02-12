@@ -11,8 +11,6 @@ jobs:
     - name: Run Java
       uses: actions/setup-java@v1
       with:
-        java-version: 8
+        java-version: 1.8
     - name: Actually build it
-      uses: eskatos/gradle-command-action@v1
-      with:
-        arguments: build
+      run: ./gradlew build
