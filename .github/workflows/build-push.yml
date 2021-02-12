@@ -1,6 +1,5 @@
 name: Run Gradle on Pushes
-
-on: push
+on: [push]
 jobs:
   gradle:
     name: Build the mod
