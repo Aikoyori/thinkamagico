@@ -1,5 +1,5 @@
 # Thinkamagico
-![Build Status Powered by GitHub Actions](https://github.com/Aikoyori/thinkamagico/workflows/Run%20Gradle%20on%20Pushes/badge.svg)
+[![Build Status Powered by GitHub Actions](https://github.com/Aikoyori/thinkamagico/workflows/Run%20Gradle%20on%20Pushes/badge.svg)](https://github.com/Aikoyori/thinkamagico/actions/)
 
 A mod created by Aikoyori literally just to learn how to mod Minecraft
 
