@@ -14,3 +14,8 @@ jobs:
         java-version: 1.8
     - name: Actually build it
       run: ./gradlew build
+    - name: Put this stuff as artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Package
+        path: build/libs
