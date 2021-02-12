@@ -3,7 +3,7 @@ name: Run Gradle on Pushes
 on: push
 jobs:
   gradle:
-    - name: Build the mod
+    name: Build the mod
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
