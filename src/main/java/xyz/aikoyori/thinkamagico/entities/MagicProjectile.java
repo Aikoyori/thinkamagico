@@ -31,7 +31,7 @@ import java.util.Random;
 public class MagicProjectile extends DamagingProjectileEntity {
     int age = 0;
 
-    boolean actuallyCollidedWithSomethingThatIsNotPlayer=false;
+    volatile boolean actuallyCollidedWithSomethingThatIsNotPlayer=false;
     protected MagicProjectile(EntityType<? extends MagicProjectile> type, double x, double y, double z, World worldIn) {
         this(type, worldIn);
         this.setPosition(x, y, z);
@@ -86,7 +86,8 @@ public class MagicProjectile extends DamagingProjectileEntity {
                 if(result.getType() == RayTraceResult.Type.BLOCK)
                 {
                     BlockRayTraceResult blockresult = (BlockRayTraceResult)result;
-                    entity.world.setBlockState(blockresult.getPos(), Blocks.BLACKSTONE.getDefaultState());
+                    //entity.world.setBlockState(blockresult.getPos(), Blocks.BLACKSTONE.getDefaultState());
+                    this.func_234616_v_().moveForced(this.getPositionVec());
 
                 }
                 actuallyCollidedWithSomethingThatIsNotPlayer=true;
@@ -115,7 +116,7 @@ public class MagicProjectile extends DamagingProjectileEntity {
 
         if (true) {
             Random rand = new Random();
-            double velocity = 3.0;
+            double velocity = 5.0;
 
             world.playSound(hitvec.x,hitvec.y,hitvec.z, ModAudio.POOF.get(), SoundCategory.NEUTRAL,10.0f,1.0f,false);
             for (int i=0;i<40;i++)
